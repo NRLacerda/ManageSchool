@@ -1,5 +1,6 @@
 ﻿using ManageSchool.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 
 namespace ManageSchool.Controllers
@@ -15,7 +16,10 @@ namespace ManageSchool.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            HomeModel home = new HomeModel();
+            home.Email = "nrochalacerda@gmail.com";
+            home.Name= "Nicolas Rocha Lacerda";
+            return View(home);
         }
 
         public IActionResult Privacy()
